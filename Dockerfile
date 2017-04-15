@@ -110,3 +110,4 @@ RUN cd /usr/local/bin \
 RUN apk add --no-cache --update postgresql-dev postgresql-client nodejs nodejs-npm git build-base
 RUN apk add --no-cache --update  tiff-dev tiff-dev jpeg-dev openjpeg-dev libpng-dev zlib-dev freetype-dev lcms2-dev libwebp-dev
 RUN pip install Django djangorestframework markdown django-filter django_extensions django-crispy-forms django-grappelli pillow
+RUN npm -g install bower
