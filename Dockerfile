@@ -101,12 +101,13 @@ RUN set -ex \
 
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
-  && { [ -e easy_install ] || ln -s easy_install-* easy_install; } \
+  && { [ -e easy_install ] || ln -s easy_install-* easy_ins7tall; } \
   && ln -s idle3 idle \
   && ln -s pydoc3 pydoc \
   && ln -s python3 python \
   && ln -s python3-config python-config
 
-RUN apk add --no-cache --update postgresql-dev git build-base
+RUN apk add --no-cache --update postgresql-dev git build-base nodejs-npm
+RUN npm -g install bower
 RUN apk add --no-cache --update  tiff-dev tiff-dev jpeg-dev openjpeg-dev libpng-dev zlib-dev freetype-dev lcms2-dev libwebp-dev
 RUN pip install Django djangorestframework markdown django-filter django_extensions django-crispy-forms django-grappelli pillow
